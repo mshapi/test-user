@@ -135,6 +135,7 @@ func TestMemoryRepository_Delete(t *testing.T) {
 
 	if err != nil {
 		t.Error(err)
+		return
 	}
 
 	err = repo.Delete(user.ID)
@@ -154,6 +155,7 @@ func TestMemoryRepository_Update(t *testing.T) {
 
 	if err != nil {
 		t.Error(err)
+		return
 	}
 
 	user.Name = "New name"
@@ -161,6 +163,7 @@ func TestMemoryRepository_Update(t *testing.T) {
 	err = repo.Update(user)
 	if err != nil {
 		t.Error(err)
+		return
 	}
 
 	updatedUser, _ := repo.Get(user.ID)

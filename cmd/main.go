@@ -64,8 +64,7 @@ func main() {
 		log.Fatalf("Ошибка чтения конфига '%s': %s\n", confPath, err)
 	}
 
-	repo := repository.NewMemoryRepository()
-	userService := service.NewUserService(repo)
+	userService := service.NewUserService(repository.NewMemoryRepository())
 
 	handler := http.NewServeMux()
 
